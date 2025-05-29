@@ -7,19 +7,27 @@ import '../index.css'; // Make sure this has full height styles
 export default function Home() {
     return (
         // Overall Page
-        <div className="relative w-full min-h-screen inset-0 -z-10 size-full items-center bg-white">
+        <div className="relative w-full min-h-screen mt-20 inset-0  size-full items-center bg-white">
 
             {/* Background Image with low opacity, absolute positioned */}
             <div
-                className="relative inset-0 bg-center bg-contain h-[550px]"
-                style={{ backgroundImage: "url('/assets/itstore.jpg')" }}
-            ></div>
+                className="relative inset-0 bg-[center_top_45%] bg-cover   bg-no-repeat h-[550px] "
+                style={{ backgroundImage: "url('/assets/shopFront.JPG')" }}
+
+
+            >
+
+
+
+
+            </div>
 
 
 
 
             {/* Heading and Button */}
-            <section className='relative flex flex-row justify-between px-36 py-18 space-y-10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.09)] bg-white p-8 rounded-md'>
+            <section className='relative flex flex-row justify-between px-36 py-5 space-y-10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.09)]  rounded-md overflow-hidden'>
+
 
                 {/* Heading */}
                 <div className="">
@@ -31,36 +39,47 @@ export default function Home() {
                 </div>
 
                 <div className=' relative flex flex-row space-x-7' >
-                    <a href="#buttons-with-link">
-                        <button className="rounded-md flex items-center py-4 px-6 font-medium text-[20px] font-poppins
-                         text-white transition-all duration-300 ease-in-out
-                            bg-gradient-to-tr from-[#FF8300] to-[#ffb15d]
-                         shadow-md hover:bg-slate-700 hover:from-slate-700 hover:to-slate-700
-                        hover:shadow-lg focus:bg-slate-800 active:bg-slate-900
-                        disabled:opacity-50 disabled:pointer-events-none" type="button">
 
-                            <Cog className='text-white mr-2'></Cog>
-                            Book Repair
+
+                    {/*Book Repair */}
+                    <Link to="/bookRepair">
+                        <button class="group relative inline-flex h-[calc(48px+8px)]
+                     items-center justify-center rounded-full bg-gradient-to-tr
+                      from-[#FF8300] to-[#ffb15d] py-1 pl-6 pr-14 font-medium
+                       text-neutral-50">
+                            <span class="z-10 pr-2 font-poppins">Book Repair</span>
+                            <div class="absolute right-1 inline-flex h-12 w-12 items-center
+                         justify-end rounded-full bg-[#e08a2e] transition-[width]
+                          group-hover:w-[calc(100%-8px)]">
+                                <div class=" px-1 flex items-center justify-center">
+                                    <Cog className='text-white mr-2'></Cog>
+                                </div>
+                            </div>
                         </button>
+                    </Link>
 
 
-                    </a>
+                    <button class="group relative inline-flex h-[calc(48px+8px)]
+                     items-center justify-center rounded-full bg-gradient-to-tr
+                      from-[#FF8300] to-[#ffb15d] py-1 pl-6 pr-14 font-medium
+                       text-neutral-50">
+                        <span class="z-10 pr-2 font-poppins">Book 1-1 Training</span>
+                        <div class="absolute right-1 inline-flex h-12 w-12 items-center
+                         justify-end rounded-full bg-[#e08a2e] transition-[width]
+                          group-hover:w-[calc(100%-8px)]">
+                            <div class=" px-1 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 mr-2">
+                                    <path fillRule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clipRule="evenodd" />
+                                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
 
 
 
-                    <a href="#buttons-with-link">
-                        <button className="rounded-md flex items-center bg-gradient-to-tr from-[#FF8300] to-[#ffb15d] py-4 px-6 border border-transparent text-center  text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none font-medium font-poppins text-[20px]" type="button">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6 mr-2">
-                                <path fillRule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clipRule="evenodd" />
-                                <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                            </svg>
-
-                            Book 1-1 Training
-                        </button>
 
 
-                    </a>
 
                 </div>
 
@@ -68,7 +87,7 @@ export default function Home() {
 
 
             {/* Stock categories */}
-            <section className=' flex flex-col justify-start px-36 py-20  '>
+            <section className=' flex flex-col justify-start px-36 py-14 ' >
                 <div className='flex-col justify-content-flex-start'>
 
                     <p className="">
@@ -124,7 +143,7 @@ export default function Home() {
 
                     </div>
 
-                    
+
 
 
 
@@ -244,16 +263,16 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='relative flex flex-col justify-start px-36 py-20  '>
+            <section className='relative flex flex-col justify-start px-36 py-20 bg-[#111111] '>
                 <div className='flex-col justify-content-flex-start'>
 
                     <p className="">
-                        <span className="font-semibold font-poppins text-[25px] text-[#000000]">Gallary. </span>
+                        <span className="font-semibold font-poppins text-[25px] text-[#ffffff]">Gallary. </span>
 
-                        <span className="font-semibold font-poppins text-[25px] text-[#757575]">View our store.</span>
+                        <span className="font-semibold font-poppins text-[25px] text-[#a3a3a3]">View our store.</span>
                     </p>
 
-                   
+
 
 
 

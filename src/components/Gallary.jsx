@@ -1,91 +1,74 @@
-import { useState } from 'react';
-
-import { CheckCheck } from "lucide-react";
-import { Link } from "react-router-dom";
-import "../index.css";
+import { useState, useRef } from "react";
 
 const images = [
-  "/assets/IMG_1.jpg",
-  "/assets/IMG_2.jpg",  
-  "/assets/IMG_3.jpg",
-  "/assets/IMG_4.jpg",
-  // add more image URLs here
+  { id: 1, src: "/assets/galleryImages/frontOfShop1.JPG", alt: "Picture 1" },
+  { id: 2, src: "/assets/galleryImages/frontOfShop2.JPG", alt: "Picture 2" },
+  { id: 3, src: "/assets/galleryImages/frontOfShop3.JPG", alt: "Picture 2" },
+  { id: 4, src: "/assets/galleryImages/frontOfShop4.JPG", alt: "Picture 2" },
+  { id: 5, src: "/assets/galleryImages/shopMuseum1.JPG", alt: "Picture 2" },
+  { id: 6, src: "/assets/galleryImages/shopMuseum2.JPG", alt: "Picture 2" },
+  { id: 7, src: "/assets/galleryImages/shopMuseum3.JPG", alt: "Picture 2" },
+  { id: 8, src: "/assets/galleryImages/storeManager.JPG", alt: "Picture 2" },
+  // ...
 ];
 
 export default function Gallery() {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
+  const imgRef = useRef(null);
 
-  function openLightbox(index) {
-    setCurrentImage(index);
-    setLightboxOpen(true);
-  }
+  const openFullscreen = () => {
+    if (imgRef.current) {
+      if (imgRef.current.requestFullscreen) {
+        imgRef.current.requestFullscreen();
+      }
+    }
+  };
 
-  function closeLightbox() {
-    setLightboxOpen(false);
-    setCurrentImage(null);
-  }
+  const handleClick = (src) => {
+    setSelectedImg(src);
+    
+  };
 
-  function prevImage() {
-    setCurrentImage((currentImage - 1 + images.length) % images.length);
-  }
-
-  function nextImage() {
-    setCurrentImage((currentImage + 1) % images.length);
-  }
+  const closeModal = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+    setSelectedImg(null);
+  };
 
   return (
     <>
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-        {images.map((src, i) => (
-          <div key={i} className="overflow-hidden rounded-lg shadow-lg cursor-pointer" onClick={() => openLightbox(i)}>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+        {images.map(({ id, src, alt }) => (
+          <div
+            key={id}
+            className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg"
+            onClick={() => handleClick(src)}
+          >
             <img
               src={src}
-              alt={`Gallery item ${i + 1}`}
+              alt={alt}
               loading="lazy"
-              className="w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
             />
+            <div className="absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center text-white text-lg font-semibold">
+              View
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Lightbox Overlay */}
-      {lightboxOpen && (
+      {selectedImg && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-          onClick={closeLightbox}
+          ref={imgRef}
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={closeModal}
         >
-          <button
-            onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            className="absolute left-5 text-white text-3xl font-bold select-none"
-            aria-label="Previous image"
-          >
-            ‹
-          </button>
-
           <img
-            src={images[currentImage]}
-            alt={`Gallery item ${currentImage + 1}`}
-            className="max-w-full max-h-full rounded-lg shadow-lg"
-            onClick={(e) => e.stopPropagation()}
+            src={selectedImg}
+            alt="Selected"
+            className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl cursor-zoom-out"
           />
-
-          <button
-            onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            className="absolute right-5 text-white text-3xl font-bold select-none"
-            aria-label="Next image"
-          >
-            ›
-          </button>
-
-          <button
-            onClick={closeLightbox}
-            className="absolute top-5 right-5 text-white text-3xl font-bold select-none"
-            aria-label="Close lightbox"
-          >
-            ×
-          </button>
         </div>
       )}
     </>

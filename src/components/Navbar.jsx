@@ -21,7 +21,7 @@ export default function Navbar() {
     return (
         <div>
             {/* Top Navigation */}
-            <nav className="w-full bg-[#2D2D2D] px-4 md:px-10 py-2 fixed top-0 z-50 shadow">
+            <nav className="w-full bg-[#2D2D2D] px-4 md:px-10  fixed top-0 z-20  shadow">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link to="/">
@@ -81,7 +81,7 @@ export default function Navbar() {
 
 
             {/* Secondary Nav with Dropdown */}
-            <nav className="bg-[#3f3f3f] text-white w-full fixed top-20">
+            <nav className="bg-[#3f3f3f] text-white w-full fixed top-16 z-20">
                 <div className="flex justify-between items-center w-full px-10 font-semibold font-poppins">
                     {/* Left Section: Dropdowns */}
                     <div className="flex items-center space-x-4">
@@ -93,7 +93,7 @@ export default function Navbar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </button>
-                            <div className="absolute hidden group-hover:block bg-[#2D2D2D] text-white w-48 shadow-lg z-20">
+                            <div className="absolute hidden group-hover:block bg-[#2D2D2D] text-white w-48 shadow-lg">
                                 <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">Mac</a>
                                 <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">iPhone</a>
                                 <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">iPad</a>
