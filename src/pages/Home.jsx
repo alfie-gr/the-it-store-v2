@@ -11,7 +11,7 @@ export default function Home() {
 
             {/* Background Image with low opacity, absolute positioned */}
             <div
-                className="relative inset-0 bg-[center_top_45%] bg-cover   bg-no-repeat h-[550px] "
+                className="relative inset-0 bg-[center_top_45%] bg-cover   bg-no-repeat h-[300px] md:h-[550px] "
                 style={{ backgroundImage: "url('/assets/shopFront.JPG')" }}
 
 
