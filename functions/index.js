@@ -47,6 +47,60 @@ exports.getCustomers = functions.https.onRequest((req, res) => {
   });
 });
 
+exports.getAvailableAppointments = functions.https.onRequest((req, res) => {
+  cors(req, res, async () => {
+    try {
+      const date_from = req.query.date_from;
+      const date_to = req.query.date_to;
+
+      if (!date_from || !date_to) {
+        return res.status(400).json({ error: "Missing required date_from or date_to" });
+      }
+
+      const appointments = [];
+      let page = 1;
+      let hasMore = true;
+
+      while (hasMore) {
+        const params = new URLSearchParams({
+          date_from,
+          date_to,
+          page: page.toString(),
+          mine: "true"
+        });
+
+        const url = `https://${REPAIRSHOPR_SUBDOMAIN}.repairshopr.com/api/v1/appointments?${params.toString()}`;
+
+        const response = await fetch(url, {
+          headers: {
+            Authorization: `Bearer ${REPAIRSHOPR_API_KEY}`,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`RepairShopr API error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        if (Array.isArray(data.appointments)) {
+          appointments.push(...data.appointments);
+        }
+
+        hasMore = data.appointments?.length === 25; // assuming 25 per page
+        page++;
+      }
+
+      res.status(200).json({ appointments });
+    } catch (error) {
+      console.error("Error fetching appointments:", error);
+      res.status(500).json({ error: error.message || "Internal Server Error" });
+    }
+  });
+});
+
+
 exports.createRepairTicket = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
     try {
