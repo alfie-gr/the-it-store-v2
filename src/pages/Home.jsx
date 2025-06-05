@@ -40,28 +40,20 @@ export default function Home() {
 
                 <div className=' relative flex flex-col md:flex-row space-x-7' >
 
-                    <a href="#_" class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400">
-                        <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-600 via-orange-400 to-orange-200"></span>
-                        <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-orange-300 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-                        <span class="relative text-white">Repair</span>
-                    </a>
+                    
 
 
                     {/*Book Repair */}
                     <Link to="/bookRepair">
-                        <button class="group relative inline-flex h-[calc(48px+8px)]
-                     items-center justify-center rounded-full bg-gradient-to-tr
-                      from-[#FF8300] to-[#ffb15d] py-1 pl-6 pr-14 font-medium
-                       text-neutral-50">
-                            <span class="z-10 pr-2 font-poppins">Book Repair</span>
-                            <div class="absolute right-1 inline-flex h-12 w-12 items-center
-                         justify-end rounded-full bg-[#e08a2e] transition-[width]
-                          group-hover:w-[calc(100%-8px)]">
-                                <div class=" px-1 flex items-center justify-center">
-                                    <Cog className='text-white mr-2'></Cog>
-                                </div>
-                            </div>
-                        </button>
+                        <a href="#_" class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400">
+                        <div class=" px-1 flex items-center justify-center">
+                            <Cog className='text-white mr-2'></Cog>
+                        </div>
+
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-600 via-orange-400 to-orange-200"></span>
+                        <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-orange-300 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
+                        <span class="relative text-white">Repair</span>
+                    </a>
                     </Link>
 
 
