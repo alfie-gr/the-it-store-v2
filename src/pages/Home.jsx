@@ -46,7 +46,7 @@ export default function Home() {
                     {/*Book Repair */}
                     <Link
                         to="/bookRepair"
-                        className="relative inline-flex items-center justify-center p-4  px-5 py-3 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
+                        className="relative inline-flex items-center justify-center overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
                     >
                         {/* Icon container */}
                         <div className="px-1 flex items-center justify-center z-10">
@@ -66,7 +66,7 @@ export default function Home() {
                     {/*Book Repair */}
                     <Link
                         to="/bookRepair"
-                        className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
+                        className="relative inline-flex items-center justify-center  overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
                     >
                         {/* Icon container */}
                         <div className="z-10 flex items-center justify-center">
