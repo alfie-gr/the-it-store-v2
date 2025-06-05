@@ -109,7 +109,7 @@ export default function Home() {
 
 
             {/* Stock categories */}
-            <section className=' flex flex-col justify-start px-36 py-14 ' >
+            <section className=' flex flex-col justify-start px-10 md:px-36 py-14 ' >
                 <div className='flex-col justify-content-flex-start'>
 
                     <p className="">
