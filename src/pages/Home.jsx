@@ -175,7 +175,7 @@ export default function Home() {
 
 
 
-            <section className="bg-[#0d0d0d] text-white py-20 px-36 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <section className="bg-[#0d0d0d] text-white py-20 px-10 md:px-36 grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="p-8 bg-[#1a1a1a] rounded-lg shadow-lg hover:shadow-orange-400/40 transition-all">
                     <h3 className="text-2xl font-semibold mb-2 text-[#ff8300]">Repairs</h3>
 
