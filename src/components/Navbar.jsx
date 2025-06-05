@@ -87,8 +87,8 @@ export default function Navbar() {
                     <div className="flex items-center space-x-4">
                         {/* Shop All Dropdown */}
                         <div className="relative group">
-                            <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] text-[16px]  hover:text-[#FB880E] flex items-center gap-2">
-                                <span>Shop All</span>
+                            <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
+                                <span className=" text-[16px] ">Shop All</span>
                                 <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
