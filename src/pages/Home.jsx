@@ -38,7 +38,7 @@ export default function Home() {
                     <span className="font-semibold font-poppins text-[24px] md:text-[50px] text-[#FF8300] ">Performance you can trust</span>
                 </div>
 
-                <div className=' relative flex flex-col space-y-4  md:flex-row md:space-x-3 md:space-y-0' >
+                <div className=' relative flex flex-col space-y-4  md:flex-row md:space-x-7 md:space-y-0' >
 
 
 
@@ -69,7 +69,7 @@ export default function Home() {
                         className="relative inline-flex items-center justify-center  overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
                     >
                         {/* Icon container */}
-                        <div className="z-10 flex items-center justify-center">
+                        <div className="z-10 flex items-center md:my-6 justify-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
