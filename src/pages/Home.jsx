@@ -63,7 +63,7 @@ export default function Home() {
                         <span className="relative text-white z-10">Book Repair</span>
                     </Link>
 
-                    {/*Book Repair */}
+                    {/*Book 1-1 */}
                     <Link
                         to="/bookRepair"
                         className="relative inline-flex items-center justify-center md:px-5 py-4 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
@@ -92,7 +92,7 @@ export default function Home() {
                         <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-orange-300 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
 
                         {/* Button Text */}
-                        <span className="relative text-white z-10">Book Repair</span>
+                        <span className="relative text-white z-10">Book 1-1 Training</span>
                     </Link>
 
 
