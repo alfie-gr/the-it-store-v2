@@ -109,19 +109,23 @@ export default function Home() {
 
 
             {/* Stock categories */}
-            <section className=' flex flex-col justify-start px-10 md:px-36 py-14 ' >
+            <section className=' flex flex-col justify-start  py-14 ' >
                 <div className='flex-col justify-content-flex-start'>
 
-                    <p className="">
-                        <span className="font-semibold font-poppins text-[20px] md:text-[25px] text-[#000000]">Stock. </span>
+                    <div className='px-10 md:px-36'>
+                        <p className="">
+                            <span className="font-semibold font-poppins text-[20px] md:text-[25px] text-[#000000]">Stock. </span>
 
-                        <span className="font-semibold font-poppins text-[20px] md:text-[25px] text-[#757575]">Browse our stock.</span>
-                    </p>
+                            <span className="font-semibold font-poppins text-[20px] md:text-[25px] text-[#757575]">Browse our stock.</span>
+                        </p>
 
-                    {/* Maybe Take Out!!!!!!!!!!!!!!! */}
-                    <p className="font-medium font-poppins text-[15px] text-[#414141]">
-                        We have rapidly rotating stock of pre-owned Apple devices, including Mac laptops and desktops, iPad, iPhone and Apple Watch.
-                    </p>
+                        {/* Maybe Take Out!!!!!!!!!!!!!!! */}
+                        <p className="font-medium font-poppins text-[15px] text-[#414141]">
+                            We have rapidly rotating stock of pre-owned Apple devices, including Mac laptops and desktops, iPad, iPhone and Apple Watch.
+                        </p>
+
+                    </div>
+
 
 
 
