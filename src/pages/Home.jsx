@@ -113,9 +113,9 @@ export default function Home() {
                 <div className='flex-col justify-content-flex-start'>
 
                     <p className="">
-                        <span className="font-semibold font-poppins text-[25px] text-[#000000]">Stock. </span>
+                        <span className="font-semibold font-poppins text-[20px] md:text-[25px] text-[#000000]">Stock. </span>
 
-                        <span className="font-semibold font-poppins text-[25px] text-[#757575]">Browse our stock.</span>
+                        <span className="font-semibold font-poppins text-[20px] md:text-[25px] text-[#757575]">Browse our stock.</span>
                     </p>
 
                     {/* Maybe Take Out!!!!!!!!!!!!!!! */}
