@@ -38,7 +38,7 @@ export default function Home() {
                     <span className="font-semibold font-poppins text-[24px] md:text-[50px] text-[#FF8300] ">Performance you can trust</span>
                 </div>
 
-                <div className=' relative flex flex-col space-y-4 p-5  md:flex-row md:space-x-7 md:space-y-0' >
+                <div className=' relative flex flex-col space-y-4 md:p-5  md:flex-row md:space-x-7 md:space-y-0' >
 
 
 
@@ -46,7 +46,7 @@ export default function Home() {
                     {/*Book Repair */}
                     <Link
                         to="/bookRepair"
-                        className="relative inline-flex items-center justify-center overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
+                        className="relative inline-flex items-center justify-center md:px-5 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
                     >
                         {/* Icon container */}
                         <div className="px-1 flex items-center justify-center z-10">
@@ -66,7 +66,7 @@ export default function Home() {
                     {/*Book Repair */}
                     <Link
                         to="/bookRepair"
-                        className="relative inline-flex items-center justify-center  overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
+                        className="relative inline-flex items-center justify-center md:px-5 overflow-hidden font-medium text-orange-700 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-orange-400"
                     >
                         {/* Icon container */}
                         <div className="z-10 flex items-center justify-center">
