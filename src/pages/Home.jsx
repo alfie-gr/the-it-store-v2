@@ -31,11 +31,11 @@ export default function Home() {
 
                 {/* Heading */}
                 <div className="">
-                    <span className="font-semibold font-poppins text-[16px] md:text-[50px]  text-[#000000] ">Genuine Apple. </span>
+                    <span className="font-semibold font-poppins text-[20px] md:text-[50px]  text-[#000000] ">Genuine Apple. </span>
 
-                    <span className="font-semibold font-poppins text-[16px] md:text-[50px] text-[#353535] ">Pre-owned with confidence, </span>
+                    <span className="font-semibold font-poppins text-[20px] md:text-[50px] text-[#353535] ">Pre-owned with confidence, </span>
                     <p></p>
-                    <span className="font-semibold font-poppins text-[16px] md:text-[50px] text-[#FF8300] ">performance you can trust</span>
+                    <span className="font-semibold font-poppins text-[20px] md:text-[50px] text-[#FF8300] ">performance you can trust</span>
                 </div>
 
                 <div className=' relative flex flex-row space-x-7' >
