@@ -81,14 +81,14 @@ export default function Navbar() {
 
 
             {/* Secondary Nav with Dropdown */}
-            <nav className="bg-[#3f3f3f] text-white w-full fixed top-16 z-20">
+            <nav className="hidden md:block bg-[#3f3f3f] text-white w-full fixed top-16 z-20">
                 <div className="flex justify-between items-center w-full px-10 font-semibold font-poppins">
                     {/* Left Section: Dropdowns */}
                     <div className="flex items-center space-x-4">
                         {/* Shop All Dropdown */}
                         <div className="relative group">
                             <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
-                                <span className=" text-[12px] ">Shop All</span>
+                                <span>Shop All</span>
                                 <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
@@ -105,7 +105,7 @@ export default function Navbar() {
                         {/* Repair Dropdown */}
                         <div className="relative group">
                             <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D]  hover:text-[#FB880E] flex items-center gap-2">
-                                <Link to="/repair" className=" text-[12px] ">Repair</Link>
+                                <Link to="/repair">Repair</Link>
                                 <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
@@ -118,13 +118,13 @@ export default function Navbar() {
                         </div>
 
                         <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D]  hover:text-[#FB880E] flex items-center gap-2">
-                            <span className=" text-[12px] ">Advice</span>
+                            <span>Advice</span>
                         </button>
                         <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
-                            <span className=" text-[12px] ">Sell or Trade</span>
+                            <span>Sell or Trade</span>
                         </button>
                         <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
-                            <span className=" text-[12px] ">Contact Us</span>
+                            <span>Contact Us</span>
                         </button>
                     </div>
 
