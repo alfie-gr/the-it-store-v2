@@ -224,7 +224,7 @@ export default function Home() {
                                 <p className="ml-3">Free diagnosis*</p>
                             </li>
                         </ul>
-                        <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+                       
                     </div>
                 </div>
                 <div className="p-8 bg-[#1a1a1a] rounded-lg shadow-lg hover:shadow-orange-400/40 transition-all">
@@ -286,7 +286,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='relative flex flex-col justify-start px-36 py-20 bg-[#111111] '>
+            <section className='relative flex flex-col justify-start px-10 md:px-36 py-20 bg-[#111111] '>
                 <div className='flex-col justify-content-flex-start'>
 
                     <p className="">
