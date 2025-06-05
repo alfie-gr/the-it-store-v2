@@ -129,7 +129,7 @@ export default function Home() {
                         <div className="flex gap-x-24 px-4 py-2">
                             {/* Mac */}
                             <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg min-w-[160px]">
-                                <img src="/assets/mac.png" alt="Mac" className="h-[200px] object-contain" />
+                                <img src="/assets/mac.png" alt="Mac" className=" h-[400px]  md:h-[200px] object-contain" />
                                 <div className="text-center text-sm font-medium font-poppins">
                                     <h2 className="hover:text-red-500">Product Title</h2>
                                 </div>
