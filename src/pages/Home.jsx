@@ -26,7 +26,7 @@ export default function Home() {
 
 
             {/* Heading and Button */}
-            <section className='relative flex flex-row justify-between  px-10 md:px-36 py-5 space-y-10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.09)]  rounded-md overflow-hidden'>
+            <section className='relative flex flex-col md:flex-row justify-between  px-10 md:px-36 py-5 space-y-10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.09)]  rounded-md overflow-hidden'>
 
 
                 {/* Heading */}
@@ -38,7 +38,7 @@ export default function Home() {
                     <span className="font-semibold font-poppins text-[13px] md:text-[50px] text-[#FF8300] ">performance you can trust</span>
                 </div>
 
-                <div className=' relative flex flex-col md:flex-row space-x-7' >
+                <div className=' relative flex flex-row space-x-7' >
 
 
                     {/*Book Repair */}
