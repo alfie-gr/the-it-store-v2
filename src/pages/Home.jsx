@@ -31,7 +31,7 @@ export default function Home() {
 
                 {/* Heading */}
                 <div className="">
-                    <span className="font-semibold font-poppins text-[24px] md:text-[50px]  text-[#000000] ">Genuine Apple. </span>
+                    <span className="font-semibold font-poppins text-[24px] md:text-[50px] md:font-bold text-[#000000] ">Genuine Apple. </span>
                     <p className='md:hidden'></p>
                     <span className="font-semibold font-poppins text-[24px] md:text-[50px] text-[#353535] ">Pre-owned with confidence, </span>
                     <p></p>
