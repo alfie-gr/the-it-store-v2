@@ -38,7 +38,7 @@ export default function Home() {
                     <span className="font-semibold font-poppins text-[24px] md:text-[50px] text-[#FF8300] ">Performance you can trust</span>
                 </div>
 
-                <div className=' relative flex flex-col space-y-4  md:my-5 md:flex-row md:space-x-7 md:space-y-0' >
+                <div className=' relative flex flex-col space-y-4  md:flex-row md:space-x-3 md:space-y-0' >
 
 
 
