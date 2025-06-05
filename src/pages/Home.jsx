@@ -125,46 +125,41 @@ export default function Home() {
 
 
 
-                    <div className='overflow-x-auto'>
-                        <div className="flex space-x-4  px-4 py-2">
-
+                    <div className="overflow-x-auto">
+                        <div className="flex gap-x-6 px-4 py-2">
                             {/* Mac */}
-                            <div className="flex flex-col items-center md:mx-12 justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg">
+                            <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg min-w-[160px]">
                                 <img src="/assets/mac.png" alt="Mac" className="h-[200px] object-contain" />
                                 <div className="text-center text-sm font-medium font-poppins">
-                                    <h2 className=' hover:text-red-500' >Product Title</h2>
+                                    <h2 className="hover:text-red-500">Product Title</h2>
                                 </div>
-
                             </div>
 
                             {/* iPhone */}
-                            <div className="flex flex-col items-center md:mx-12 justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg">
+                            <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg min-w-[160px]">
                                 <img src="/assets/iphone.jpg" alt="iPhone" className="h-[200px] object-contain" />
                                 <span className="text-center text-sm font-medium font-poppins">iPhone</span>
                             </div>
 
                             {/* iPad */}
-                            <div className="flex flex-col items-center md:mx-12 justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg">
+                            <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg min-w-[160px]">
                                 <img src="/assets/ipad.jpg" alt="iPad" className="h-[200px] object-contain" />
                                 <span className="text-center text-sm font-medium font-poppins">iPad</span>
                             </div>
 
                             {/* Apple Watch */}
-                            <div className="flex flex-col items-center md:mx-12 justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg">
-                                <img src="/assets/appleWatch.jpg" alt="Apple Watch" className=" h-[200px] object-contain" />
+                            <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg min-w-[160px]">
+                                <img src="/assets/appleWatch.jpg" alt="Apple Watch" className="h-[200px] object-contain" />
                                 <span className="text-center text-sm font-medium font-poppins">Apple Watch</span>
                             </div>
 
                             {/* Accessories */}
-                            <div className="flex flex-col items-center md:mx-12 justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg">
-                                <img src="/assets/accessories.png" alt="Accessories" className=" h-[200px] object-contain" />
+                            <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg min-w-[160px]">
+                                <img src="/assets/accessories.png" alt="Accessories" className="h-[200px] object-contain" />
                                 <span className="text-center text-sm font-medium font-poppins">Accessories</span>
                             </div>
-
-
                         </div>
                     </div>
-
 
 
 
