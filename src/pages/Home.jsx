@@ -127,7 +127,7 @@ export default function Home() {
 
 
 
-                    <div className="grid grid-cols-5 whitespace-nowrap overflow-x-auto grid-rows-1 gap-6 py-10">
+                    <div className="grid grid-cols-5 whitespace-nowrap overflow-x-auto md:overflow-hidden grid-rows-1 gap-6 py-10">
 
                         {/* Mac */}
                         <div className="flex flex-col items-center justify-between space-y-8 bg-white p-4 rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-lg">
