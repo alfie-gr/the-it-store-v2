@@ -165,7 +165,7 @@ export default function BookRepairForm() {
         {!submitInfo ?
           (<>
 
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid  grid-rows-3 md:grid-cols-3 gap-10">
 
 
               {/* Customer Information Form */}
