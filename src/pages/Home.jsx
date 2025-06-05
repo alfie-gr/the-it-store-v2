@@ -38,7 +38,7 @@ export default function Home() {
                     <span className="font-semibold font-poppins text-[24px] md:text-[50px] text-[#FF8300] ">Performance you can trust</span>
                 </div>
 
-                <div className=' relative flex flex-row space-x-7' >
+                <div className=' relative flex flex-col md:flex-row space-x-7' >
 
                     <a href="#_" class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-purple-500">
                         <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700"></span>
