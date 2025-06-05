@@ -71,10 +71,46 @@ export default function Navbar() {
                 {/* Mobile Menu Dropdown */}
                 {mobileMenuOpen && (
                     <div className="md:hidden mt-2 space-y-2">
-                        <Link to="#" className="block text-white px-4 py-2">Repair</Link>
-                        <Link to="#" className="block text-white px-4 py-2">Advice</Link>
-                        <Link to="#" className="block text-white px-4 py-2">Sell or Trade</Link>
-                        <Link to="#" className="block text-white px-4 py-2">Contact</Link>
+                        <div className="relative group">
+                            <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
+                                <span>Shop All</span>
+                                <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div className="absolute hidden group-hover:block bg-[#2D2D2D] text-white w-48 shadow-lg">
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">Mac</a>
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">iPhone</a>
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">iPad</a>
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">Apple Watch</a>
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">Accessories</a>
+                            </div>
+                        </div>
+
+                        {/* Repair Dropdown */}
+                        <div className="relative group">
+                            <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D]  hover:text-[#FB880E] flex items-center gap-2">
+                                <Link to="/repair">Repair</Link>
+                                <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div className="absolute hidden group-hover:block bg-[#2D2D2D] text-white w-48 shadow-lg z-20">
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">Mac Repairs</a>
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">iPhone Repairs</a>
+                                <a href="#" className="block px-6 py-5 hover:bg-[#FF8300]">iPad Repairs</a>
+                            </div>
+                        </div>
+
+                        <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D]  hover:text-[#FB880E] flex items-center gap-2">
+                            <span>Advice</span>
+                        </button>
+                        <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
+                            <span>Sell or Trade</span>
+                        </button>
+                        <button type="button" className="py-4 px-3 hover:bg-[#2D2D2D] hover:text-[#FB880E] flex items-center gap-2">
+                            <span>Contact Us</span>
+                        </button>
                     </div>
                 )}
             </nav>
