@@ -7,7 +7,7 @@ import '../index.css'; // Make sure this has full height styles
 export default function Home() {
     return (
         // Overall Page
-        <div className="relative w-full max-w-screen overflow-x-hidden mx-auto mt-20 inset-0  items-center bg-white">
+        <div className="relative w-full max-w-screen overflow-x-hidden mx-auto mt-16 md:mt-20 inset-0  items-center bg-white">
 
             {/* Background Image with low opacity, absolute positioned */}
             <div
