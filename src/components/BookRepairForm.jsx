@@ -364,7 +364,7 @@ export default function BookRepairForm() {
                 <label className="block  text-md font-medium text-gray-700  font-poppins">Select Issue:</label>
 
                 {/* Issue */}
-                {device && (
+                {device && model && variant && (
                   <select
                     value={modelIssue}
                     onChange={(e) => setmodelIssue(e.target.value)}
