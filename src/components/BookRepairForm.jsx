@@ -12,22 +12,22 @@ import dayjs from 'dayjs';
 export default function BookRepairForm() {
 
 
- 
 
-  {/* State variables for customer information */ }
+
+  // State variables for customer information
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [business_name, setBusinessName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  {/* State variables for device and model selection */ }
+  // State variables for device and model selection 
   const [device, setDevice] = useState("");
   const [model, setModel] = useState("");
   const [variant, setVariant] = useState("");
   const [modelIssue, setmodelIssue] = useState("");
 
-  {/* Sumbit info state */ }
+  // Sumbit info state
   const [submitInfo, setSubmitInfo] = useState(false);
 
   const device_type = {
@@ -106,7 +106,7 @@ export default function BookRepairForm() {
   const AppointmentsList = () => {
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");}
+    const [error, setError] = useState("");
 
     useEffect(() => {
       const fetchAppointments = async () => {
@@ -120,7 +120,7 @@ export default function BookRepairForm() {
 
         try {
           const response = await fetch(
-            `https://https://getavailableappointments-4f6qjip22a-uc.a.run.app?date_from=${dateFrom}&date_to=${dateTo}`
+            `https://getavailableappointments-4f6qjip22a-uc.a.run.app?date_from=${dateFrom}&date_to=${dateTo}`
           );
 
           if (!response.ok) {
@@ -139,7 +139,7 @@ export default function BookRepairForm() {
 
       fetchAppointments();
     }, []);
-  
+
 
 
     const handleSubmit = async (e) => {
@@ -415,3 +415,4 @@ export default function BookRepairForm() {
       </div >
     );
   }
+}
