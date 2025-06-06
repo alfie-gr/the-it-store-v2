@@ -1,14 +1,12 @@
 import { useState, useRef } from "react";
 
 const images = [
-  { id: 1, src: "/assets/galleryImages/frontOfShop1.JPG", alt: "Picture 1" },
-  { id: 2, src: "/assets/galleryImages/frontOfShop2.JPG", alt: "Picture 2" },
-  { id: 3, src: "/assets/galleryImages/frontOfShop3.JPG", alt: "Picture 2" },
-  { id: 4, src: "/assets/galleryImages/frontOfShop4.JPG", alt: "Picture 2" },
-  { id: 5, src: "/assets/galleryImages/shopMuseum1.JPG", alt: "Picture 2" },
-  { id: 6, src: "/assets/galleryImages/shopMuseum2.JPG", alt: "Picture 2" },
-  { id: 7, src: "/assets/galleryImages/shopMuseum3.JPG", alt: "Picture 2" },
-  { id: 8, src: "/assets/galleryImages/storeManager.JPG", alt: "Picture 2" },
+ 
+  { id: 1, src: "/assets/galleryImages/frontOfShop3.JPG", alt: "Picture 2" },
+  { id: 2, src: "/assets/galleryImages/frontOfShop4.JPG", alt: "Picture 2" },
+  { id: 3, src: "/assets/galleryImages/shopMuseum1.JPG", alt: "Picture 2" },
+  { id: 4, src: "/assets/galleryImages/shopMuseum2.JPG", alt: "Picture 2" },
+  { id: 5, src: "/assets/galleryImages/shopMuseum3.JPG", alt: "Picture 2" },
   // ...
 ];
 
