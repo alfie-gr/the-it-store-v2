@@ -11,117 +11,136 @@ import dayjs from 'dayjs';
 
 export default function BookRepairForm() {
 
-  {/* State variables appoitnments */ }
-  const fetchAppointments = async () => {
-    const response = await fetch(
-      `https://us-central1-the-it-store.cloudfunctions.net/getAvailableAppointments?date_from=2025-06-01&date_to=2025-06-07`
-    );
-    const data = await response.json();
-    setAppointments(data.appointments);
+
+ 
+
+  {/* State variables for customer information */ }
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [business_name, setBusinessName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  {/* State variables for device and model selection */ }
+  const [device, setDevice] = useState("");
+  const [model, setModel] = useState("");
+  const [variant, setVariant] = useState("");
+  const [modelIssue, setmodelIssue] = useState("");
+
+  {/* Sumbit info state */ }
+  const [submitInfo, setSubmitInfo] = useState(false);
+
+  const device_type = {
+    iPhone: [
+      "Select Model",
+      "iPhone Xr",
+      "iPhone SE",
+      "iPhone 11",
+      "iPhone 12",
+      "iPhone 13",
+      "iPhone 14",
+      "iPhone 15",
+      "iPhone 16"],
+    iPad: ["Select Model", "5/6/7/8/9th Gen", "iPad Air", "iPad Pro", "iPad Mini"],
+    MacBook: ["Select Model", "MacBook Air", "MacBook Pro", "MacBook"],
+    iMac: ["Select Model", "22.5in", "24in M1/M3", "27in"],
+    MacPro: ["Up to 2011 Tower", "Darth Vader's Trash Can", "Cheese Grater"],
+    MacMini: ["Old white one", "Aluminum with DVD", "Aluminum without DVD", "Space Grey"],
+    AppleWatch: ["Select Model", "Apple Watch Series 1/2/3", "Apple Watch Series 4/5/6/7/8", "Apple Watch SE", "Apple Watch Ultra"],
+    Other: ["Select Model", "Apple TV", "HomePod", "AirPods", "Accessories"]
   };
 
-  
+  const device_model = {
+    "iPhone Xr": ["Select Variant*", "Xr Standard"],
+    "iPhone SE": ["Select Variant*", "SE1", "SE2", "SE3"],
+    "iPhone 11": ["Select Variant*", "11 Standard", "11 Pro", "11 Pro Max"],
+    "iPhone 12": ["Select Variant*", "12 Standard", "12 Pro", "12 Pro Max"],
+    "iPhone 13": ["Select Variant*", "13 Standard", "13 Pro", "13 Pro Max"],
+    "iPhone 14": ["Select Variant*", "14 Standard", "14 Pro", "14 Pro Max"],
+    "iPhone 15": ["Select Variant*", "15 Standard", "15 Pro", "15 Pro Max"],
+    "iPhone 16": ["Select Variant*", "16 Standard", "16 Pro", "16 Pro Max"]
+  };
 
-  const HOURS = Array.from({ length: 9 }, (_, i) => 9 + i); // 9 AM to 5 PM
-  const DAYS = Array.from({ length: 7 }, (_, i) => dayjs().add(i, 'day')); // Next 7 days
+  const ticket_issue = {
+    "iPhone": ["Battery Replacement", "Screen Repair", "Charging Port Issue", "Camera Issue", "Water Damage", "Wont Turn On", "Audio Issue", "Other"],
+    "iPad": ["Battery Replacement", "Screen Repair", "Charging Port Issue", "Camera Issue", "Water Damage", "Wont Turn On", "Audio Issue", "Other"],
+    "MacBook": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
+    "iMac": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
+    "MacPro": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
+    "MacMini": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
+    "AppleWatch": ["Battery Replacement", "Screen Repair", "Charging Issue", "Water Damage", "Other"],
+    "Other": ["Battery Replacement", "Screen Repair", "Charging Issue", "Water Damage", "Other"]
+  }
 
-  const AppointmentsGrid = () => {
+  const gatheredInfo = {
+    first_name,
+    last_name,
+    business_name,
+    email,
+    phone,
+    device_type: device,
+    device_model: variant,
+    ticket_issue: modelIssue,
+  };
+
+  const handleInfoSubmit = () => {
+    if (!first_name || !last_name || !email || !phone || !device || !model || !variant || !modelIssue) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+    // gatheredInfo.first_name = first_name;
+    // gatheredInfo.last_name = last_name;
+    // gatheredInfo.business_name = business_name;
+    // gatheredInfo.email = email;
+    // gatheredInfo.phone = phone;
+    // gatheredInfo.device_type = device;   // Ensure this is a string
+    // gatheredInfo.device_model = variant;
+    // gatheredInfo.ticket_issue = modelIssue;
+    // console.log("Gathered Info:", gatheredInfo);
+    setSubmitInfo(true);
+
+  }
+
+
+
+  const AppointmentsList = () => {
     const [appointments, setAppointments] = useState([]);
-    const [loading, setLoading] = useState(true);}
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
-    const isSlotTaken = (day, hour) => {
-      return appointments.some((appt) => {
-        const start = dayjs(appt.start_at);
-        return start.isSame(day, 'day') && start.hour() === hour;
-      });
-    };
+    useEffect(() => {
+      const fetchAppointments = async () => {
+        setLoading(true);
+        setError("");
 
-    {/* State variables for customer information */ }
-    const [first_name, setFirstName] = useState("");
-    const [last_name, setLastName] = useState("");
-    const [business_name, setBusinessName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+        const dateFrom = new Date().toISOString().split("T")[0]; // today
+        const dateTo = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0]; // 7 days from now
 
-    {/* State variables for device and model selection */ }
-    const [device, setDevice] = useState("");
-    const [model, setModel] = useState("");
-    const [variant, setVariant] = useState("");
-    const [modelIssue, setmodelIssue] = useState("");
+        try {
+          const response = await fetch(
+            `https://<YOUR_CLOUD_FUNCTION_URL>?date_from=${dateFrom}&date_to=${dateTo}`
+          );
 
-    {/* Sumbit info state */ }
-    const [submitInfo, setSubmitInfo] = useState(false);
+          if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+          }
 
-    const device_type = {
-      iPhone: [
-        "Select Model",
-        "iPhone Xr",
-        "iPhone SE",
-        "iPhone 11",
-        "iPhone 12",
-        "iPhone 13",
-        "iPhone 14",
-        "iPhone 15",
-        "iPhone 16"],
-      iPad: ["Select Model", "5/6/7/8/9th Gen", "iPad Air", "iPad Pro", "iPad Mini"],
-      MacBook: ["Select Model", "MacBook Air", "MacBook Pro", "MacBook"],
-      iMac: ["Select Model", "22.5in", "24in M1/M3", "27in"],
-      MacPro: ["Up to 2011 Tower", "Darth Vader's Trash Can", "Cheese Grater"],
-      MacMini: ["Old white one", "Aluminum with DVD", "Aluminum without DVD", "Space Grey"],
-      AppleWatch: ["Select Model", "Apple Watch Series 1/2/3", "Apple Watch Series 4/5/6/7/8", "Apple Watch SE", "Apple Watch Ultra"],
-      Other: ["Select Model", "Apple TV", "HomePod", "AirPods", "Accessories"]
-    };
+          const data = await response.json();
+          setAppointments(data.appointments || []);
+        } catch (err) {
+          console.error("Failed to fetch appointments", err);
+          setError("Failed to load appointments.");
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    const device_model = {
-      "iPhone Xr": ["Select Variant*", "Xr Standard"],
-      "iPhone SE": ["Select Variant*", "SE1", "SE2", "SE3"],
-      "iPhone 11": ["Select Variant*", "11 Standard", "11 Pro", "11 Pro Max"],
-      "iPhone 12": ["Select Variant*", "12 Standard", "12 Pro", "12 Pro Max"],
-      "iPhone 13": ["Select Variant*", "13 Standard", "13 Pro", "13 Pro Max"],
-      "iPhone 14": ["Select Variant*", "14 Standard", "14 Pro", "14 Pro Max"],
-      "iPhone 15": ["Select Variant*", "15 Standard", "15 Pro", "15 Pro Max"],
-      "iPhone 16": ["Select Variant*", "16 Standard", "16 Pro", "16 Pro Max"]
-    };
+      fetchAppointments();
+    }, []);
+  }
 
-    const ticket_issue = {
-      "iPhone": ["Battery Replacement", "Screen Repair", "Charging Port Issue", "Camera Issue", "Water Damage", "Wont Turn On", "Audio Issue", "Other"],
-      "iPad": ["Battery Replacement", "Screen Repair", "Charging Port Issue", "Camera Issue", "Water Damage", "Wont Turn On", "Audio Issue", "Other"],
-      "MacBook": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
-      "iMac": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
-      "MacPro": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
-      "MacMini": ["Screen Repair", "Hard Drive Issue", "Software Issue", "Keyboard Issue", "Liquid Damage", "Other"],
-      "AppleWatch": ["Battery Replacement", "Screen Repair", "Charging Issue", "Water Damage", "Other"],
-      "Other": ["Battery Replacement", "Screen Repair", "Charging Issue", "Water Damage", "Other"]
-    }
-
-    const gatheredInfo = {
-      first_name,
-      last_name,
-      business_name,
-      email,
-      phone,
-      device_type: device,
-      device_model: variant,
-      ticket_issue: modelIssue,
-    };
-
-    const handleInfoSubmit = () => {
-      if (!first_name || !last_name || !email || !phone || !device || !model || !variant || !modelIssue) {
-        alert("Please fill out all required fields.");
-        return;
-      }
-      // gatheredInfo.first_name = first_name;
-      // gatheredInfo.last_name = last_name;
-      // gatheredInfo.business_name = business_name;
-      // gatheredInfo.email = email;
-      // gatheredInfo.phone = phone;
-      // gatheredInfo.device_type = device;   // Ensure this is a string
-      // gatheredInfo.device_model = variant;
-      // gatheredInfo.ticket_issue = modelIssue;
-      // console.log("Gathered Info:", gatheredInfo);
-      setSubmitInfo(true);
-    
-    }
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -374,7 +393,18 @@ export default function BookRepairForm() {
             </div>
           </>) : (
             <div>
-              <TimeslotGrid></TimeslotGrid>
+              <div>
+                <h2>Available Appointments</h2>
+                {loading && <p>Loading...</p>}
+                {error && <p style={{ color: "red" }}>{error}</p>}
+                <ul>
+                  {appointments.map((appt) => (
+                    <li key={appt.id}>
+                      {appt.start_at} — {appt.end_at}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           )}
 
