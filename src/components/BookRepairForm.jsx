@@ -1,5 +1,5 @@
 // components/CustomerForm.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { httpsCallable } from "firebase/functions";
 import { functions } from "@/firebase"; //
 import React from 'react';
@@ -106,7 +106,7 @@ export default function BookRepairForm() {
   const AppointmentsList = () => {
     const [appointments, setAppointments] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    const [error, setError] = useState("");}
 
     useEffect(() => {
       const fetchAppointments = async () => {
@@ -120,7 +120,7 @@ export default function BookRepairForm() {
 
         try {
           const response = await fetch(
-            `https://<YOUR_CLOUD_FUNCTION_URL>?date_from=${dateFrom}&date_to=${dateTo}`
+            `https://https://getavailableappointments-4f6qjip22a-uc.a.run.app?date_from=${dateFrom}&date_to=${dateTo}`
           );
 
           if (!response.ok) {
@@ -139,7 +139,7 @@ export default function BookRepairForm() {
 
       fetchAppointments();
     }, []);
-  }
+  
 
 
     const handleSubmit = async (e) => {
